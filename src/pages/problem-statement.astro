@@ -1,0 +1,267 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Nav from '../components/layout/Nav.astro';
+const props = Astro.props
+    const accordionContent2 = await Astro.glob("../content/problemstatement/*.md");
+    var links = await Astro.glob("../content/problemstatement/*.md");
+---
+
+<Layout title="GUI Hackathon">
+    
+   
+    
+    <!-- <base target="_blank"> -->
+    <section class="bg-code items-center">
+        <div class="resources-main backdrop-blur-xl">
+            <div class="">
+                <h1 class="section-title items-center text-center">Problem Statements</h1>
+                <h4 class="text-xl text-white m-3">The participants can pick any one of the given problem statements for their submission for the competitions. In each of the ideas, the minimum requirements that are to be met are written, and the participants are also free to add more features that they see fit for the topic.  </h4>
+            </div>
+    <div class="bg-transparent">
+    {
+      accordionContent2.map((item, index)=>{
+    //   const Content = item.Content;
+      return(
+        <div class="faq"> 
+          <div class="question">
+            <h3>{index + 1} . {item.frontmatter.heading}</h3>
+            <svg width = '15' height = '10' viewBox = '0 0 42 25'>
+                <path d = 'M3 3L21 21L39 3' stroke = 'white' stroke-width="7" stroke-linecape="round" /> 
+              </svg> 
+          </div>
+          <div class="answer overflow-scroll h-100">
+            {/* <Content /> */}
+            <p class="text-xl ml-2 pl-2">{item.frontmatter.para}</p>
+            {item.frontmatter.item && (
+                <ul class="ml-5 mt-2 list-disc">
+                  {item.frontmatter.item.map((p:any, index:number) => (
+                    <li class="bg-none backdrop-blur-none text-white">
+                        {/* {index+1}{". "} */}
+                      {/* <a href={p.link} class="text-blue-500 hover:underline" target="_blank"> */}
+                        {p.name}
+                      {/* </a> */}
+                    </li>
+                  ))}
+                </ul>
+              )}
+          </div>
+        </div>
+       )})
+     }
+    <!-- <div id="py" class="h-100">100vh</div> -->
+     </div>
+     </div>
+     <div class="resources-main px-5" id="submission-guidelines">
+        <h1 class="section-title items-center text-center">Submission Guidelines</h1>
+        <br />
+<div class="text-white">
+<h4 class="text-2xl">Follow the following steps for creating your submission:</h4>
+<ol class=" list-decimal list-inside text-lg m-5 p-5">
+<li>Create a zip archive in the following format <strong>&lt;Problem Statement Number&gt;_&lt;Your First Name&gt;.zip.</strong> For example, If your name is Diptangshu Dey, and you have attempted the Interactive 3D Object Viewer Problem, your submission should be named &ldquo;7_Diptangshu.zip&rdquo;.&nbsp;</li>
+<li>Inside the archive, <strong>Include the instructions to run your application</strong>, and the steps to install the software required for the same.&nbsp;</li>
+<li>Alongside the installation instructions, create a folder with the name <strong>&ldquo;Submission&rdquo;</strong>, and the actual code of your application should be placed inside this folder.&nbsp;</li>
+</ol>
+<br />
+<h4 class="text-2xl">Your submission file structure should look like this:</h4>
+<div>
+<div class="border inline-block bg-black m-5 p-5">
+<p>7_Diptangshu</p>
+<p>| &nbsp; Installation_Instructions.md</p>
+<p>|---Submission/</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp; &lt;Project Files&gt;</p>
+</div>
+</div>
+<div><h3 class="text-xl">Please submit the Solution to the Problem Statement provided for the Hackathon at <a class="text-xl text-blue-300 hover:underline" href="mailto:contact-cfd@fossee.in">contact-cfd@fossee.in</a></h3></div>
+</div>
+    </div>
+    </section>
+    <section>
+       
+    </section>
+    
+    <style>
+      
+      .section-title{
+        color: #ffffff;
+      }
+    .bg-code{
+      /* background: url(../assets/img/code-bg.png) fixed; */
+      background: #0a4850;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: left;
+    }
+    .resources-main{
+            margin: 3vh;
+            /* width: 70%; */
+            overflow-y: hidden;
+           /* backdrop-filter: blur(19px); */
+           background-color: rgba(255, 255, 255, 0.2);
+        }
+        .resources-heading h1{
+            color: rgb(153, 153, 255);
+            font-size: 7.5vh;
+            padding: 3vh 21%;
+            font-weight: 700;
+        }
+        .resources-heading:hover{
+            color: rgb(1, 44, 80);
+        }
+        @media screen and (max-width: 983px) {
+          .resources-main{
+            width: 95%;
+          }
+            .resources-heading h1{
+                font-size: 4.5vh;
+                padding: 3vh 10%;
+                margin-top: 10vh;
+                text-align: center;
+            }
+        }
+    
+      section{
+        display: flex;
+        flex-direction: column;
+        margin : 0 auto;
+        width: 100% !important; 
+      }
+    
+    
+    
+      .question{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #ffe600;
+        background-color: rgba(0, 0, 0, .02); 
+        padding: 1rem 2rem;
+      }
+    
+      .question h3{
+        font-size: 1.3rem;
+      }
+    
+      .question h3:hover{
+        text-decoration: underline;
+        color: #2088ff;
+      }
+      .faq.active .question h3{
+        text-decoration:none;
+        color: #5ea9ff;
+      }
+    
+      .answer{
+        max-height: 0;
+        overflow-y: scroll;
+        transition: max-height 0.8s ease;
+        scrollbar-color: rgb(144, 240, 255) rgb(134, 134, 134);
+      }
+    
+      /* .answer ul {
+        padding: 1vh 3vh;
+        font-size: 1rem;
+        margin: 0;
+        line-height: 1.6;
+        color: black;
+        font-weight: 500;
+        background-color: rgba(255, 255, 255, 0.247);
+        backdrop-filter: blur(23px);
+      } */
+    
+      .answer ul li a{
+        color: rgb(0, 217, 255);
+        text-decoration: none;
+      }
+    
+      .answer ul li a:hover{
+        text-decoration: underline;
+        color: rgb(147, 255, 228);
+      }
+    
+      .faq.active .answer{
+        max-height: 300px;
+        animation: fade 1s ease-in-out;
+      }
+    
+      .faq.active svg{
+        transform: rotate(180deg);
+      }
+    
+      svg{
+        display: none;    /* If you want an icon besides the accordion, remove this line */
+        transition: transform 0.5s ease-in;
+      }
+    
+      @keyframes fade {
+        from{
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to{
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .faq{
+        max-width: 100%;
+        cursor: pointer;
+        border: 1px solid #f6f4f4;
+      }
+      @media screen and (max-width: 768px){
+        .faq{
+        max-width: 100%;
+        cursor: pointer;
+        border: 1px solid #f6f4f4;
+      }
+        .answer p{
+          padding: 0.4vh 3vh;
+          font-size: 1rem;
+          line-height: 1.6;
+          margin: 0;
+        }
+      }
+    </style>
+    
+    
+    <script>
+    
+    
+      // this is for the styling of the accordion
+      var answers = Array.from(document.getElementsByClassName("answer"));
+      answers.forEach(answer => {
+        const anchors = answer.querySelectorAll("ul li a");
+        const lists = answer.querySelectorAll("ul li");
+        anchors.forEach(anchor => {
+          anchor.classList.add("text-[#17a2b8]", "no-underline", "hover:underline", "hover:text-[#0e8fa3]");
+        });
+    
+        lists.forEach((list)=>{
+          list.classList.add("py-1", "px-3", "text-base", "m-0", "text-black", "font-normal","text-lg");
+        })
+    });
+          
+      // this is for the accordion
+      const faqs = document.querySelectorAll('.faq');
+    faqs.forEach(faq => {
+      faq.addEventListener('click', () => {
+        // If this accordion is already active, remove 'active' class from all
+        if (faq.classList.contains('active')) {
+          faq.classList.remove('active');
+        } else {
+          // Otherwise, close all accordions and open the clicked one
+          faqs.forEach(f => f.classList.remove('active'));
+          faq.classList.add('active', 'text-[#50ebff]');
+        }
+      });
+    });
+    
+    
+    </script>
+    
+    
+    
+    
+    
+    
+</Layout>

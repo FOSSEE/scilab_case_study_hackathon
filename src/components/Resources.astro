@@ -1,0 +1,230 @@
+---
+const props = Astro.props
+var accordionContent = await Astro.glob("../content/resourcesPage/*.md");
+var links = await Astro.glob("../content/resourcesPage/*.md");
+---
+<!-- <base target="_blank"> -->
+<section class="bg-code items-center">
+    <div class="resources-main backdrop-blur-xl">
+        <div class="">
+            <h1 class="section-title items-center text-center">Resources</h1>
+            <h4 class=" text-white m-3">Candidates are encouraged to refer to the resources and get an overview of the suitable desktop application framework/technologies according to their tech stack. Candidates are also requested to contact us in case they need help finding resources for their tech stack for the workshop. </h4>
+        </div>
+<div class="grid md:grid-cols-2 bg-transparent">
+{
+  accordionContent.map((item)=>{
+  const Content = item.Content;
+  return(
+    <div class="faq"> 
+      <div class="question">
+        <h3>{item.frontmatter.heading}</h3>
+        <svg width = '15' height = '10' viewBox = '0 0 42 25'>
+            <path d = 'M3 3L21 21L39 3' stroke = 'white' stroke-width="7" stroke-linecape="round" /> 
+          </svg> 
+      </div>
+      <div class="answer overflow-scroll h-32">
+        {/* <Content /> */}
+        {item.frontmatter.item && (
+            <ul class="ml-5 mt-2">
+              {item.frontmatter.item.map((p:any, index:number) => (
+                <li class="bg-none backdrop-blur-none text-white">{index+1}{". "}
+                  <a href={p.link} class="text-blue-500 hover:underline" target="_blank">
+                    {p.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+      </div>
+    </div>
+   )})
+ }
+<!-- <div id="py" class="h-100">100vh</div> -->
+ </div>
+ </div>
+</section>
+
+
+<style>
+  
+  .section-title{
+    color: #ffffff;
+  }
+.bg-code{
+  /* background: url(../assets/img/code-bg.png) fixed; */
+  background: #0a4850;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+}
+.resources-main{
+        margin: 3vh;
+        width: 70%;
+        overflow-y: hidden;
+       /* backdrop-filter: blur(19px); */
+       background-color: rgba(255, 255, 255, 0.2);
+    }
+    .resources-heading h1{
+        color: rgb(153, 153, 255);
+        font-size: 7.5vh;
+        padding: 3vh 21%;
+        font-weight: 700;
+    }
+    .resources-heading:hover{
+        color: rgb(1, 44, 80);
+    }
+    @media screen and (max-width: 983px) {
+      .resources-main{
+        width: 95%;
+      }
+        .resources-heading h1{
+            font-size: 4.5vh;
+            padding: 3vh 10%;
+            margin-top: 10vh;
+            text-align: center;
+        }
+    }
+
+  section{
+    display: flex;
+    flex-direction: column;
+    margin : 0 auto;
+    width: 100% !important; 
+  }
+
+
+
+  .question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffe600;
+    background-color: rgba(0, 0, 0, .02); 
+    padding: 1rem 2rem;
+  }
+
+  .question h3{
+    font-size: 1.3rem;
+  }
+
+  .question h3:hover{
+    text-decoration: underline;
+    color: #1662b8;
+  }
+  .faq.active .question h3{
+    text-decoration:none;
+    color: #5ea9ff;
+  }
+
+  .answer{
+    max-height: 0;
+    overflow-y: scroll;
+    transition: max-height 0.8s ease;
+    scrollbar-color: rgb(144, 240, 255) rgb(134, 134, 134);
+  }
+
+  /* .answer ul {
+    padding: 1vh 3vh;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.6;
+    color: black;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.247);
+    backdrop-filter: blur(23px);
+  } */
+
+  .answer ul li a{
+    color: rgb(0, 217, 255);
+    text-decoration: none;
+  }
+
+  .answer ul li a:hover{
+    text-decoration: underline;
+    color: rgb(147, 255, 228);
+  }
+
+  .faq.active .answer{
+    max-height: 300px;
+    animation: fade 1s ease-in-out;
+  }
+
+  .faq.active svg{
+    transform: rotate(180deg);
+  }
+
+  svg{
+    display: none;    /* If you want an icon besides the accordion, remove this line */
+    transition: transform 0.5s ease-in;
+  }
+
+  @keyframes fade {
+    from{
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .faq{
+    max-width: 100%;
+    cursor: pointer;
+    border: 1px solid #f6f4f4;
+  }
+  @media screen and (max-width: 768px){
+    .faq{
+    max-width: 90%;
+    cursor: pointer;
+    border: 1px solid #f6f4f4;
+  }
+    .answer p{
+      padding: 0.4vh 3vh;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+</style>
+
+
+<script>
+
+
+  // this is for the styling of the accordion
+  var answers = Array.from(document.getElementsByClassName("answer"));
+  answers.forEach(answer => {
+    const anchors = answer.querySelectorAll("ul li a");
+    const lists = answer.querySelectorAll("ul li");
+    anchors.forEach(anchor => {
+      anchor.classList.add("text-[#17a2b8]", "no-underline", "hover:underline", "hover:text-[#0e8fa3]");
+    });
+
+    lists.forEach((list)=>{
+      list.classList.add("py-1", "px-3", "text-base", "m-0", "text-black", "font-bold",);
+    })
+});
+      
+  // this is for the accordion
+  const faqs = document.querySelectorAll('.faq');
+faqs.forEach(faq => {
+  faq.addEventListener('click', () => {
+    // If this accordion is already active, remove 'active' class from all
+    if (faq.classList.contains('active')) {
+      faq.classList.remove('active');
+    } else {
+      // Otherwise, close all accordions and open the clicked one
+      faqs.forEach(f => f.classList.remove('active'));
+      faq.classList.add('active', 'text-blue-300');
+    }
+  });
+});
+
+
+</script>
+
+
+
+
+

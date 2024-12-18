@@ -1,0 +1,516 @@
+---
+const props = Astro.props
+// import Carousel from './Carousel.astro'
+// import 'bootstrap/dist/css/bootstrap.css'
+// import faqJson from '../../public/jsonData/faq.json'
+// import homeJson from '../../public/jsonData/home.json'
+
+// interface Coreteam{
+//     name : string;
+//     position : string[];
+//     institute : string;
+// }
+
+// interface Significance{
+//     intro : string;
+//     point: string[];
+//     end: string;
+// }
+
+// interface PartnerAndOrganisations{
+//     name: string;
+//     description: string;
+// }
+
+// interface Faq{
+//     question: string;
+//     answer: string;
+// }
+
+// interface Home{
+//     significance: Significance[];
+//     purpose: string[];
+//     partners: PartnerAndOrganisations[];
+//     coreteam: Coreteam[];
+// }
+
+// const homeData : Home = homeJson;
+// const faqData : Faq[] = faqJson;
+
+//importing content from markdown files
+import Dates from "./Dates.astro";
+
+import Resources from "./Resources.astro";
+import Hero from "./Hero.astro";
+const paraContent = await Astro.glob("../content/aboutpara/*.md");
+// const dateContent = await Astro.glob("../content/dates/*.md");
+const coreTeamContent = await Astro.glob("../content/homePage/coreTeam/*.md");
+const partnerContent = await Astro.glob("../content/homePage/partner/*.md");
+const purposeContent = await Astro.glob("../content/homePage/purpose/*.md");
+const significanceContent = await Astro.glob("../content/aboutpara/significance/*.md");
+const faqContent = await Astro.glob("../content/faq/*.md");
+import iitb from "../assets/img/IITB.png";
+import fossee from "../assets/img/FOSSEE.png";
+import st from "../assets/img/spoken.png";
+---
+
+<!-- Introduction -->
+<div id="home">
+    <Hero />
+<div class="bg-[#ffffff] md:px-4 pb-5">
+    <div class="md:px-20 px-3">
+    <h1 class="md:text-xl font-bold item-center text-center section-title mx-4 px-4" id="about">About</h1>
+    <!-- <h2 class="welcome-heading"> Welcome to the Open Source Hardware IoT GIS Hackathon!</h2> -->
+    {paraContent.map((point) => {
+        return ( <p class="md:text-xl text-sm text-justify"> {point.frontmatter.para}</p>)})}
+
+
+    <!-- <h1 class="mt-3 font-bold text-2xl">Benefits:</h1>{
+    significanceContent.map((point) => {
+        return (
+                <ul class="md:pl-6 pl-3 list-disc" >
+                    {/* <p>{point.frontmatter.intro}</p> */}
+                    {
+                        point.frontmatter.point.map((p:string) => {
+                            return (
+                                <li  class="md:text-lg text-sm ">{p}</li>
+                            )
+                        })
+                    }
+                </ul>
+                // <p class="significance-end">{point.frontmatter.end}</p>
+            )
+        })
+        } -->
+        </div>
+</div>
+
+<!-- Important Dates -->
+<div class="bg-white md:px-4 pb-5">
+    <div class="md:px-20 px-3">
+      <h1 class="text-xl md:text-2xl font-bold text-center section-title mx-4 mb-5" id="date">
+        Timeline
+      </h1>
+      <div class="overflow-x-auto md:text-lg text-sm text-justify">
+        <table class="table-auto w-full border-collapse border border-gray-300 text-center">
+          <thead>
+            <tr class="bg-gray-200">
+              <th class="w-1/2 border border-gray-300 px-4 py-2">Event</th>
+              <th class="w-1/2 border border-gray-300 px-4 py-2">Date</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-900">
+            <tr>
+              <td class="border border-gray-300 px-4 py-2">Registration Opens</td>
+              <td class="border border-gray-300 px-4 py-2">20 December 2024</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border border-gray-300 px-4 py-2">Pre-Hackathon/Inaugural Event</td>
+              <td class="border border-gray-300 px-4 py-2">TBD</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 px-4 py-2">Hackathon Start Date</td>
+              <td class="border border-gray-300 px-4 py-2">20 December 2024</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border border-gray-300 px-4 py-2">Submission Deadline</td>
+              <td class="border border-gray-300 px-4 py-2">10 February 2025</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 px-4 py-2">Results Announcement</td>
+              <td class="border border-gray-300 px-4 py-2">1 March 2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  
+
+  <div class="bg-white md:px-4 pb-5">
+    <div class="md:px-20 px-3">
+      <h1 class="text-xl md:text-2xl font-bold text-center section-title mx-4 mb-5" id="who-can-participate">
+        Who Can Participate?
+      </h1>
+      <ul class="list-disc list-inside space-y-2 md:text-lg text-sm text-justify">
+        <li>Open ONLY to individuals (no team participation).</li>
+        <li>Students, researchers, and professionals passionate about computational reproducibility.</li>
+        <li>Participants must have a basic understanding of numerical methods and computational tools.</li>
+      </ul>
+    </div>
+  </div>
+  
+
+
+  <div class="bg-white md:px-4 pb-5">
+    <div class="md:px-20 px-3">
+      <h1 class="text-xl md:text-2xl font-bold text-center section-title mx-4 mb-5" id="why-participate">
+        Why Participate?
+      </h1>
+      <ul class="list-disc list-inside space-y-2 md:text-lg text-sm text-justify">
+        <li>Open to everyone.</li>
+        <li>Gain visibility in the Scilab and open-source communities.</li>
+        <li>Win cash rewards for top-performing projects.</li>
+        <li>Top performers may be offered internships with FOSSEE.</li>
+        <li>Gain hands-on experience with Scilab for solving real-world problems.</li>
+      </ul>
+    </div>
+  </div>
+  
+
+  <div class="bg-white md:px-4 pb-5">
+    <div class="md:px-20 px-3">
+      <h1 class="text-xl md:text-2xl font-bold text-center section-title mx-4 mb-5" id="problem-statement">
+        Problem Statement
+      </h1>
+      <p class=" leading-relaxed mb-4">Participants are required to:</p>
+      <ul class="list-disc list-inside space-y-2 text-gray-700">
+        <li>Select a published research paper as a reference.</li>
+        <li>Reproduce its results using Scilab.</li>
+        <li>Present the Scilab-based solution, workflow, and comparison with the original results along with a report.</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+<div class="bg-white md:px-4 pb-5">
+    <div class="md:px-20 px-3">
+      <h1 class="text-xl md:text-2xl font-bold text-center section-title mx-4 mb-5" id="topics">
+        Case study topics can be chosen from the following domains for the Hackathon
+      </h1>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-gray-100 rounded-lg shadow-md p-5">
+          <h2 class="text-lg font-semibold text-gray-800 mb-3">Technology and Innovation</h2>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Robotics and Autonomous Systems</li>
+            <li>Data Analytics and Machine Learning</li>
+            <li>Artificial Intelligence and Optimization</li>
+          </ul>
+        </div>
+  
+        <!-- Card 2 -->
+        <div class="bg-gray-100 rounded-lg shadow-md p-5">
+          <h2 class="text-lg font-semibold text-gray-800 mb-3">Sustainability and Health</h2>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Renewable Energy and Sustainability</li>
+            <li>Computational Biology and Healthcare Analytics</li>
+          </ul>
+        </div>
+  
+        <!-- Card 3 -->
+        <div class="bg-gray-100 rounded-lg shadow-md p-5">
+          <h2 class="text-lg font-semibold text-gray-800 mb-3">Applied Mathematics and Engineering</h2>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Control Systems</li>
+            <li>Space and Aerospace Simulations</li>
+            <li>Digital Signal and Image Processing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="bg-white md:px-4 pb-5">
+    <div class="md:px-20 px-3 space-x-6">
+      <h1 class="text-xl md:text-2xl font-bold text-center section-title mx-4 mb-5" id="how-to-participate">
+        How to participate?
+      </h1>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Visit this webpage to have detailed information about the case study project and go through all the links given under the Case Study Project tab.
+        <br />Submit the proposal for your chosen Case Study project as per the guidelines, and our team will review and approve it based on the abstract provided.
+      </p>
+      <p class="text-gray-700">
+        Link: 
+        <a 
+          href="https://scilab.in/case-study-portal/case-study-project" 
+          class="text-blue-600 hover:text-blue-800 underline"
+          target="_blank"
+          rel="noopener noreferrer">
+          https://scilab.in/case-study-portal/case-study-project
+        </a>
+      </p>
+    </div>
+  </div>
+  
+<div class="bg-[#ffffff] md:px-4 pb-5">
+    <div class="md:px-20 px-3">
+    <h1 class="md:text-xl font-bold item-center text-center section-title mx-4 px-4" id="about">
+Resources</h1><br /><h3>Explore the Spoken Tutorial series on Scilab to strengthen your understanding of Scilab concepts. These tutorials cover a wide range of topics. Access them here: <a href="https://spoken-tutorial.org/tutorial-search/?search_foss=Scilab&amp;search_language=English">https://spoken-tutorial.org/tutorial-search/?search_foss=Scilab&amp;search_language=English</a></h3>
+</div></div>
+
+<div class="bg-[#ffffff] md:px-4 pb-5">
+    <div class="md:px-20 px-3">
+    <h1 class="md:text-xl font-bold item-center text-center section-title mx-4 px-4" id="about">System Requirements</h1>
+<h4><strong>General:</strong></h4>
+<ul>
+<li>
+<h3><strong>RAM:</strong> 4 GB (8 GB recommended)</h3>
+</li>
+<li>
+<h3><strong>Processor:</strong> Dual-core or higher</h3>
+</li>
+<li>
+<h3><strong>Storage:</strong> 2 GB free space</h3>
+</li>
+<li>
+<h3><strong>Internet:</strong> Stable connection</h3>
+</li>
+</ul>
+<h4><strong>Linux:</strong></h4>
+<ul>
+<li>
+<h3>OS: Ubuntu 18.04+ or equivalent</h3>
+</li>
+<li>
+<h3>Scilab:<a href="https://www.scilab.org/download"> Download latest version</a></h3>
+</li>
+</ul>
+<h4><strong>Mac:</strong></h4>
+<ul>
+<li>
+<h3>OS: macOS 10.13+</h3>
+</li>
+<li>
+<h3>Scilab:<a href="https://www.scilab.org/download"> Download latest version</a></h3>
+</li>
+</ul>
+<h4><strong>Windows:</strong></h4>
+<ul>
+<li>
+<h3>OS: Windows 10+ (64-bit)</h3>
+</li>
+</ul>
+<p>Scilab:<a href="https://www.scilab.org/download"> Download latest version</a></p>
+</div></div>
+
+<div class="bg-[#ffffff] md:px-4 pb-5">
+    <div class="md:px-20 px-3">
+    <h1 class="md:text-xl font-bold item-center text-center section-title mx-4 px-4" id="about">Rules and Regulations</h1>
+<p>&nbsp;</p>
+<p>The decision of the review committee and organizers in declaring the results will be final. No queries in this regard will be entertained.</p>
+<p>The same person can not participate twice.</p>
+<p>If a person is found participating in more than one team, both the teams will be disqualified from the Hackathon.</p>
+<p>There will be only one point of contact (the team leader) with the organizers.</p>
+<p>Any participant found to be indulging in any form of malpractice will be immediately disqualified.</p>
+    </div>
+</div>
+
+
+
+<h2 class="text-center text-3xl font-bold mb-6 section-title  hr-lines">ORGANISERS</h2>
+<footer class=" text-white mt-8 pb-8">
+    <!-- Organizers Section -->
+    
+      
+      <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-center items-center space-x-3 mb-6 bg-white text-green-300 ">
+        <a class="hover:scale-105" href="https://www.iitb.ac.in/" target="_blank"><img  src={iitb.src} alt="IIT Bombay"  decoding="async"></a>
+        <a class="hover:scale-105" href="https://fossee.in/" target="_blank"> <img src={fossee.src} alt="FOSSEE"  decoding="async"></a>
+          <a class="hover:scale-105" href="https://spoken-tutorial.org/" target="_blank"> <img src={st.src} alt="Spoken Tutorial"  decoding="async"></a>
+      </div>
+
+</div></footer>
+
+
+ <!-- <div class="grid md:grid-cols-2 background-url">
+ <div>
+<Dates />
+</div>
+
+
+<div class="flex items-center justify-center" id ="eligibility">
+    <div class="">
+    <h1 class="text-4xl font-bold item-center text-center section-title">Eligibility</h1>
+   
+    <div class="regBtnContainer">
+        <p class="text-lg text-justify mx-3 px-3">Students pursuing any engineering/ non-engineering course or graduates/ freshers, who are enthusiastic about software development may apply.  While having a background in Computer Science and Engineering/Information Technology or related fields is preferable, we also consider students from other streams with strong programming skills.
+
+        </p>
+    </div>
+</div>
+</div>
+
+</div> -->
+<!-- Registration -->
+<!-- <div class="registration-container   background-url" id ="register">
+    <h1 class="text-4xl font-bold item-center text-center section-title">Registration</h1>
+    <p class="text-center text-xl">Please click on the following button to register yourself for the competition</p>
+    <div class="items-center text-center">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuAU18u2mXkVZLxPeOyxfylcEn3GXYGmVdSsg37bPsUlUahw/viewform?usp=pp_url" target="_blank"><button class="custom-btn btn-15">Register</button></a>
+           
+        
+    </div>
+</div> -->
+
+
+
+<!-- <Faq /> -->
+<!-- Significance -->
+
+<!-- <div class="body-container">
+    <h1 class="intro" id = "purpose">Purpose</h1>{
+        purposeContent.map((point) => {
+            return (
+                <p class="significance-end">{point.frontmatter.desc}</p>
+            )
+        })
+    }
+</div> -->
+
+
+
+
+<!-- Partners and Organisers -->
+
+<!-- <div class="pno-container" id = "partners">
+    <h1 class="intro">Partner and Organisers</h1>
+    <div class="tech-imgs">
+       
+    </div>{
+        partnerContent.map((partner) => {
+            return (
+                <p>
+                    <span class="subheading">{partner.frontmatter.name}</span>
+                    {partner.frontmatter.description}
+                </p>
+            )
+        })
+    }
+</div> -->
+
+
+
+<!-- FAQ -->
+
+
+
+
+<!-- <Resources /> -->
+
+<!-- Core Team and Contact Us -->
+
+<div class="bg-[#e7fcff] text-center pb-10" id ="contact">
+    <h1 class="section-title text-center">Contact Us
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M4.05 21q-.45 0-.75-.3t-.3-.75V15.9q0-.325.225-.587t.575-.363l3.45-.7q.35-.05.713.063t.587.337L10.9 17q.95-.55 1.8-1.213t1.625-1.437q.825-.8 1.513-1.662t1.187-1.788L14.6 8.45q-.2-.2-.275-.475T14.3 7.3l.65-3.5q.05-.325.325-.562T15.9 3h4.05q.45 0 .75.3t.3.75q0 3.125-1.362 6.175t-3.863 5.55t-5.55 3.863T4.05 21" />
+    </svg> -->
+</h1>
+   <!-- <div class="contact-us">{
+        coreTeamContent.map((member) => {
+            return (
+                <div class="teach">
+                    <h4>{member.frontmatter.name}</h4>
+                    {member.frontmatter.position.map((pos:string) => {
+                        return (
+                            <p>{pos}</p>
+                        )
+                    })}
+                    <p>{member.frontmatter.institute}</p>
+                </div>
+            )
+        })
+        }
+    </div>-->
+    <p class="text-xl">
+        Email us at
+    <pspan class="email">
+        <svg xmlns="http://www.w3.org/2000/svg" class="!inline-block text-xl" width="32" height="32" viewBox="0 0 32 32" {...props}>
+            <path fill="black" class="!inline-block" d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-2.2 2L16 14.78L6.2 8ZM4 24V8.91l11.43 7.91a1 1 0 0 0 1.14 0L28 8.91V24Z" />
+        </svg>
+        : 
+        <a href="mailto:contact-cfd@fossee.in" class="text-xl text-blue-600 hover:underline" target="_blank">contact-cfd@fossee.in</a>
+        <!-- / -->
+        <!-- <a href="mailto:mohamedkasim@iitb.ac.in" target="_blank">mohamedkasim@iitb.ac.in</a> -->
+    </span></p>
+    <p class="text-xl"><strong>Reach out to us through Slack</strong></p>
+    <p class="text-xl"><strong> Join the FOSSEE, IIT Bombay’s official Slack Channel by clicking</strong>  <a href="https://join.slack.com/t/fossee-iitbombay/shared_invite/zt-2sxfgzovm-JiRwfXSxPU3HxIQIlrOUDw" target="_blank" class="text-blue-600 hover:underline"><span >here</span></a><span > or </span><a href="https://join.slack.com/t/fossee-iitbombay/shared_invite/zt-1txemmacg-Yy~Ap3bGqsdkr60CxuDmcw" target="_blank" class="text-blue-600 hover:underline"><span >here</span></a>
+        </p>
+        <p class="text-xl">After joining the official Slack Channel by clicking one of the above links, please join the&nbsp; workspace for the <a href="https://fossee-iitbombay.slack.com/archives/C07SDB5LSQ5" target="_blank" class="text-blue-600 hover:underline">#desktop-application-development-competition</a> and join it.</p>
+</div>
+
+</div>
+<!-- CSS -->
+
+  <style>
+    .background-url{
+        background: url(../assets/img/bg-01.png);
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+ 
+    button {
+  margin: 20px;
+}
+.custom-btn {
+  color: #0a4850;
+  width: 25rem;
+  height: 50px;
+  /* padding: 10px 25px; */
+ 
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  display: inline-block;
+  font-size: larger;
+}
+@media screen and (max-width:498px) {
+    .custom-btn {
+        width: 20rem;
+        height: 50px;
+    }
+}
+    .btn-15 {
+        font-size:larger;
+        color: #0a4850;
+        color: #ffcc00;
+  border: 2px solid#00e1ff;
+  border-radius: 18px;
+  background: #fffdf3;
+  box-shadow: 2px 2px 5px #007a8a, 2px 2px 5px #007a8a inset;
+  z-index: 1;
+  font-weight: 900;
+  transition: 0.4s ease-in-out;
+  
+}
+.btn-15:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+ z-index: -1;
+ 
+  background: #ffcc00;
+  border-radius: 18px;
+  box-shadow:
+   0 0 20px  #ffcc00;
+  transition: all 0.4s ease-in-out;
+  
+}
+.btn-15:hover {
+  color: #0a4850;
+  border: 2px solid#fff5cb;
+  font-weight: 600;
+  font-size:x-large;
+  box-shadow: 2px 2px 5px #ffcc00, 2px 2px 5px #ffcc00 inset;
+  
+}
+.btn-15:hover:after {
+  left: 0;
+  width: 100%;
+}
+.btn-15:active {
+  top: 2px;
+}
+    
+  
+  </style>
+

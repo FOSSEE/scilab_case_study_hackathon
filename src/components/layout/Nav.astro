@@ -1,0 +1,169 @@
+---
+import navLinks from "./nav-links.json";
+---
+
+<script>
+// hashchange added because js not loading on same page 
+window.addEventListener('hashchange', () => {
+  addActiveClass(); 
+});
+document.addEventListener('DOMContentLoaded', () => {
+  addActiveClass(); 
+});
+
+
+
+function addActiveClass() {
+  if(window.location.hash){
+    var currentUrl = window.location.pathname + window.location.hash.replace(/\/+$/, ''); 
+    // console.log(currentUrl);
+  }
+  else{
+    var currentUrl = window.location.pathname.replace(/\/+$/, '') + window.location.hash; 
+  }
+    var menuItems = document.querySelectorAll('.nav-link');
+
+    menuItems.forEach(item => {
+        var menuItemUrl = item.getAttribute('href'); 
+        // console.log(menuItemUrl); 
+
+     
+        if (currentUrl === menuItemUrl || window.location.hash === menuItemUrl) {
+            item.classList.add("active");
+        } else {
+            item.classList.remove("active");
+        }
+    });
+}
+
+ 
+    </script>
+
+
+
+<nav class="fixed top-0 left-0 mt-18 z-5 w-full border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 shadow-md">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <!-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="gui" /> -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+        </svg>
+        
+        <!-- <span class="typewriter self-center text-3xl font-extrabold whitespace-nowrap dark:text-white bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">GUI Competition</span> -->
+    </a>
+    <button data-collapse-toggle="navbar-solid-bg" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-solid-bg" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+    </button>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+      <ul class="md:inline-block font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
+        {
+          navLinks.map((link) => {
+            const { label, href } = link;
+
+            return (
+              <li class="md:inline-block">
+                <a class="nav-link text-brown-300 hover:text-[#0a4850] transition duration-300" href={href}>{label}</a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+         
+ <style>
+  .typewriter{
+ 
+ font-family: monospace;
+ overflow: hidden; 
+ /* border-right: .15em solid orange;  */
+ white-space: nowrap;
+ /* width: 100%; */
+ margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  /*letter-spacing: ; Adjust as needed */
+ animation: 
+   typing 2s steps(16,end),
+   blink-caret .4s step-end infinite alternate;
+   /* cursor: wait; */
+}
+
+/* The typing effect */
+@keyframes typing {
+ from { width: 0;opacity: 0; }
+ to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+ from, to { border-color: transparent }
+ 50% { border-color: orange }
+}
+  nav{
+     z-index: 999; /* Ensures the menu stays on top */
+    /* backdrop-filter: blur(10px); Optional: adds a blur effect */
+    background-color: rgba(0, 0, 0, 0.8);
+    color:white;}
+ </style>
+  <style>
+  
+    nav,
+    ul {
+      margin-bottom: 5px;
+      display: inline-block;
+      font-size: larger;
+  
+    }
+  
+    ul.menu li {
+      display: inline-block;
+      border-right: 2px solid rgb(156, 3, 3);
+      border-style: inset;
+      list-style: none;
+      padding: 0px 8px;
+    }
+  
+    @media only screen and (max-width: 600px) {
+      nav,
+    ul {
+      display:block;
+    }
+  
+    ul.menu li {
+      display:block;
+    }
+    }
+    ul.menu li a{
+    text-decoration: none;
+    color:#6c5353;
+  }
+  ul.menu li:hover{
+  color: red;
+  /* background-color: purple; */
+    }
+  ul.menu li a:hover{
+    color:red;
+  }
+  a.nav-link.active{
+    color:#0a4850 ;
+    background-color: rgb(255, 230, 0);
+    font-size: 1.4em;
+    transition: 0.5s ease-in-out;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  ul.menu li:last-child{  
+    border-right: none;
+  }
+  /* ul.menu li:hover, */
+  /* a.active {color: aqua;} */
+  ul.menu li .active{
+    color:#f70000;
+  }
+  </style>
+ 

@@ -1,0 +1,30 @@
+---
+const props = Astro.props
+// interface faqContent{
+//     question: string;
+//     answer: any;
+// }
+const faqContent = await Astro.glob("../content/faq/*.md");
+---
+
+<div class="cursor-help mt-10" id = "faq">
+  <h1 class="text-5xl font-bold items-center section-title text-center">Frequently Asked Questions (FAQ)</h1>
+
+    <div class="border-2 border-l-8 rounded-xl h-[60vh] border-[#ffe600] p-2 m-2 hover:shadow-indigo-300 shadow-lg transi overflow-y-scroll">
+    {
+      faqContent.map((faq,index) => {
+          return (
+             
+             <div class="my-5 mx-3">
+              <h4 class="font-bold">{index + 1}. {faq.frontmatter.question}</h4>
+              <p> <span class="font-semibold">Answer: </span> <span set:html={faq.frontmatter.answer}></span>
+               {/* {faq.frontmatter.answer} */}</p>
+            </div>
+          
+            
+          )
+      })
+  }
+   </div>
+  
+</div>
