@@ -72,6 +72,7 @@
    font-size: 1.7rem;
    font-weight: 700;
    padding: 2rem 2rem;
+ padding-top: 4vw;
    transition: 1.3s;
 }
 
@@ -86,4 +87,11 @@
    padding: 1rem 2rem;
    font-weight: 700;
 }  
+ }
+
+
+ /***************/
+
+ .text-shadow{
+   text-shadow:  1px 2px 11px #f00;
  }
