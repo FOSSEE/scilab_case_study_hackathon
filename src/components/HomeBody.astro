@@ -135,8 +135,8 @@ import st from "../assets/img/spoken.png";
       </h1>
       <ul class="list-disc list-outside space-y-1 md:text-xl text-sm ">
         <li>Open ONLY to individuals (no team participation).</li>
-        <li>Students, researchers, and professionals passionate about computational reproducibility.</li>
-        <li>Participants must have a basic understanding of numerical methods and computational tools.</li>
+        <li>Students, researchers, and professionals passionate about numerical computation.</li>
+        <li>Participants must have a basic understanding of programming and using computational tools.</li>
       </ul>
     </div>
   </div>
@@ -180,7 +180,7 @@ import st from "../assets/img/spoken.png";
       <h1 class="text-xl md:text-2xl font-bold text-center section-title mx-4 mb-5" id="topics">
         Case study topics can be chosen from the following domains for the Hackathon
       </h1>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:text-xl text-sm text-justify">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:text-xl text-sm ">
         <!-- Card 1 -->
         <div class="bg-gray-100 rounded-lg shadow-md p-5 ">
           <h2 class="text-lg font-semibold  mb-3">Technology and Innovation</h2>
@@ -194,7 +194,7 @@ import st from "../assets/img/spoken.png";
         <!-- Card 2 -->
         <div class="bg-gray-100 rounded-lg shadow-md p-5">
           <h2 class="text-lg font-semibold  mb-3">Sustainability and Health</h2>
-          <ul class="list-disc list-inside  space-y-1">
+          <ul class="list-disc list-inside space-y-1">
             <li>Renewable Energy and Sustainability</li>
             <li>Computational Biology and Healthcare Analytics</li>
           </ul>
@@ -203,7 +203,7 @@ import st from "../assets/img/spoken.png";
         <!-- Card 3 -->
         <div class="bg-gray-100 rounded-lg shadow-md p-5">
           <h2 class="text-lg font-semibold  mb-3">Applied Mathematics and Engineering</h2>
-          <ul class="list-disc list-inside  space-y-1">
+          <ul class="list-disc list-inside space-y-1">
             <li>Control Systems</li>
             <li>Space and Aerospace Simulations</li>
             <li>Digital Signal and Image Processing</li>
@@ -219,7 +219,34 @@ import st from "../assets/img/spoken.png";
       <h1 class="text-xl md:text-2xl font-bold text-center section-title mx-4 mb-5" id="how-to-participate">
         How to participate?
       </h1>
-      <p class="leading-relaxed mb-4 md:text-xl text-sm text-center">
+      
+        <h1 class="text-lg font-bold text-gray-900 mb-4">To participate in the hackathon, please follow these mandatory steps: </h1>
+        <ol class="list-decimal list-inside space-y-4">
+            <li class="leading-6">
+              Before proceeding, it is mandatory to fill out this Google Form:  <br />
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7sSXer3wta4B9QuT_x7xa2tx53_2uJ6PJM7t0oCdww1rPgA/viewform?usp=sf_link" 
+                   target="_blank" 
+                   class="text-blue-600 hover:underline">google form link</a><br />
+                   Your participation will not be considered if this form is not filled out.
+
+            </li>
+            <li class="leading-6">
+              After completing the form, visit this website to read all the instructions:  <br />
+                <a href="https://scilab.in/case-study-portal/case-study-project" 
+                   target="_blank" 
+                   class="text-blue-600 hover:underline">https://scilab.in/case-study-portal/case-study-project</a><br />
+                   Please go through all the links provided under the Case Study Project tab.
+            </li>
+            <li class="leading-6">
+              On the same website, you will find a Proposal Form. Fill it out for your chosen Case Study project as per the guidelines provided.<br />
+                <span class="font-semibold">Important:</span> When mentioning the name of your chosen case study project in the proposal form, use this format: <span class="italic">"NameOfCaseStudyProject (SCSH25)"</span>
+            </li>
+            <li class="leading-6">
+              Submit your proposal as per the instructions, and our team will review and approve it based on the abstract you provide. It is important that the abstract should provide a clear overview of the case study project and include a reference link to the selected case study.
+            </li>
+        </ol>
+        <p class="mt-6">By completing these steps, you will be fully registered for the hackathon.</p>
+      <!-- <p class="leading-relaxed mb-4 md:text-xl text-sm text-center">
         Visit this webpage to have detailed information about the case study project and go through all the links given under the Case Study Project tab.
         <br />Submit the proposal for your chosen Case Study project as per the guidelines, and our team will review and approve it based on the abstract provided.
       </p>
@@ -232,7 +259,7 @@ import st from "../assets/img/spoken.png";
           rel="noopener noreferrer">
           https://scilab.in/case-study-portal/case-study-project
         </a>
-      </p>
+      </p> -->
     </div>
   </div>
   
@@ -245,7 +272,7 @@ import st from "../assets/img/spoken.png";
           Explore the Spoken Tutorial series on Scilab to strengthen your understanding of Scilab concepts. These tutorials cover a wide range of topics. 
           <span class="block mt-2 text-black"></span>
             Access them here: 
-            <span class="block mt-2 text-blue-600"> <a href="https://spoken-tutorial.org/tutorial-search/?search_foss=Scilab&amp;search_language=English" class="underline" target="_blank">Spoken Tutorial Series on Scilab</a>
+            <span class="block mt-2 text-blue-600"> <a target="_blank"  href="https://spoken-tutorial.org/tutorial-search/?search_foss=Scilab&amp;search_language=English" class="underline" target="_blank">Spoken Tutorial Series on Scilab</a>
           </span>
         </h3>
       </div>
@@ -275,8 +302,8 @@ import st from "../assets/img/spoken.png";
         <div class="bg-gray-100 p-5 rounded-lg shadow-md">
           <h4 class="text-xl font-semibold mb-3"><strong>Linux:</strong></h4>
           <ul class="space-y-2">
-            <li><h3>OS: Ubuntu 18.04+ or equivalent</h3></li>
-            <li><h3>Scilab: <a href="https://www.scilab.org/download" class="text-blue-500 hover:underline">Download latest version</a></h3></li>
+            <li><h3>OS: Ubuntu 22.04+ or equivalent</h3></li>
+            <li><h3>Scilab: <a target="_blank"  href="https://www.scilab.org/download" class="text-blue-500 hover:underline">Download latest version</a></h3></li>
           </ul>
         </div>
   
@@ -285,7 +312,7 @@ import st from "../assets/img/spoken.png";
           <h4 class="text-xl font-semibold mb-3"><strong>Mac:</strong></h4>
           <ul class="space-y-2">
             <li><h3>OS: macOS 10.13+</h3></li>
-            <li><h3>Scilab: <a href="https://www.scilab.org/download" class="text-blue-500 hover:underline">Download latest version</a></h3></li>
+            <li><h3>Scilab: <a target="_blank" href="https://www.scilab.org/download" class="text-blue-500 hover:underline">Download latest version</a></h3></li>
           </ul>
         </div>
   
@@ -293,9 +320,9 @@ import st from "../assets/img/spoken.png";
         <div class="bg-gray-100 p-5 rounded-lg shadow-md">
           <h4 class="text-xl font-semibold mb-3"><strong>Windows:</strong></h4>
           <ul class="space-y-2">
-            <li><h3>OS: Windows 10+ (64-bit)</h3></li>
+            <li><h3>OS: Windows 10 or 11</h3></li>
           </ul>
-          <p>Scilab: <a href="https://www.scilab.org/download" class="text-blue-500 hover:underline">Download latest version</a></p>
+          <p>Scilab: <a target="_blank"  href="https://www.scilab.org/download" class="text-blue-500 hover:underline">Download latest version</a></p>
         </div>
   
       </div>
@@ -309,9 +336,9 @@ import st from "../assets/img/spoken.png";
       <div class="flex flex-col justify-center text-justify space-y-3 mt-4 md:text-xl text-sm">
         <ol class="list-decimal">
         <li>The decision of the review committee and organizers in declaring the results will be final. No queries in this regard will be entertained.</li>
-        <p>The same person cannot participate twice.</li>
-        <li>If a person is found participating in more than one team, both the teams will be disqualified from the Hackathon.</li>
-        <li>There will be only one point of contact (the team leader) with the organizers.</li>
+       <li>The same person cannot participate twice.</li>
+        <!-- <li>If a person is found participating in more than one team, both the teams will be disqualified from the Hackathon.</li>
+        <li>There will be only one point of contact (the team leader) with the organizers.</li> -->
         <li>Any participant found to be indulging in any form of malpractice will be immediately disqualified.</li>
       </ol>
       </div>
