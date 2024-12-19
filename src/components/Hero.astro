@@ -27,7 +27,15 @@ import btn1 from "../assets/img/button-img-01.png"
           <h1 class="text-white text-6xl font-bold">Scilab Case Study </h1>
           <h1 class="text-white text-6xl font-bold"><span class="text-red-600">Hackathon</span></h1>
           <br>
-          <h3 class="text-white text-lg font-bold">Registration: 24 May 2020 - 06 June 2020 | Hackathon: 10 June 2020 - 30 June 2020</h3>
+          <h3 class="text-white text-xl font-bold">Registration date: <span class="text-2xl">20 December 2024</span></h3>
+          <h3 class="text-white text-xl font-bold"> Submission end date: <span class=" text-2xl">10 February 2025</span></h3>
+          <br />
+<p class="bg-[#fefe16] py-4 px-4 text-red-600"> *Anyone can register and submit their case study from 20 December 2024 to 10 February 2025</p>
+
+          <div class="py-4">  
+             <button class="neon-button">Register</button>
+
+          </div>
         </div>
       
 
@@ -158,5 +166,61 @@ import btn1 from "../assets/img/button-img-01.png"
   .bg-secondPatch{height: 80px;}
   .flip-card { height: 80px; }
 }
+
+
+
+
+/*********neon button********** */
+
+
+.neon-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: black;
+    border: 2px solid red;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+}
+
+.neon-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: red;
+    filter: blur(10px);
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0.8;
+}
+
+.neon-button:hover {
+    color: black;
+    background-color: red;
+    box-shadow: 0 0 15px red, 0 0 30px red, 0 0 45px red;
+}
+
+.neon-button:hover::before {
+    opacity: 1;
+}
+
+/*********end neon button********** */
+
+
+
+
+
+
+
+
 </style>
 
