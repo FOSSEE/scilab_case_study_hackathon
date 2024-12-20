@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 /* @font-face {
     font-family: myFirstFont;
     src: url(../font/Aller/Aller_Lt.ttf);
@@ -10,8 +9,15 @@
  } */
 
  body{
+   font-size: 1rem;
+   line-height: 1.5;
    overflow-x: hidden;
    /* margin-bottom:30em; */
+   color: #212529;
+   font-family: "Nunito Sans", serif;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
+  font-style: normal;
  }
  .code-text {
      font-family: monospace;
@@ -62,17 +68,15 @@
         monospace;
   }
  .section-title{
-   font-family:  sans-serif;
-   font-weight: 400;
+   font-family: 'Nunito sans' !important;
+   /* font-weight: 400; */
    font-style: normal;
    color:#efd043;
    color:#f50000;
-   /* text-shadow: 4px 4px #0a4850; */
- 
-   font-size: 1.7rem;
-   font-weight: 700;
-   padding: 2rem 2rem;
- padding-top: 4vw;
+   font-size: 1.5rem;
+   font-weight: 500;
+   padding: 1.5rem 2rem;
+ /* padding-top: 4vw; */
    transition: 1.3s;
 }
 
@@ -82,11 +86,11 @@
    padding: 1rem 2rem;
    /* text-shadow: 2px 2px #0a4850; */
 }  
-.section-title:hover{
+/* .section-title:hover{
  font-size: 2rem;
    padding: 1rem 2rem;
    font-weight: 700;
-}  
+}   */
  }
 
 

@@ -11,6 +11,7 @@ import secondPatch from "../assets/img/patch-01.png"
 
 import title from "../assets/img/new-title-img.png"
 import btn1 from "../assets/img/button-img-01.png"
+import { Image } from "astro:assets"
 ---
 <!-------------#front section------------- -->
 <section class="hero">
@@ -20,6 +21,7 @@ import btn1 from "../assets/img/button-img-01.png"
         <div class="flex flex-col justify-center items-center md:pt-20 space-y-5">
           <h2 class="text-white text-4xl font-bold">A global challenge for bright minds</h2>
           <br>
+        
           <h6 class="text-white text-xl font-bold">
            <p> An initiative of the FOSSEE Project,</p>
             <p>Indian Institute of Technology Bombay, India </p></h6>
@@ -115,10 +117,10 @@ import btn1 from "../assets/img/button-img-01.png"
         background: url(../assets/img/bg-01.png);
         /* background-attachment:fixed; */
         background-size: cover;
-  overflow: hidden;
-  position: relative;
+       overflow: hidden;
+      position: relative;
         /* padding: 0em 10em; */
-        height: 100vh;
+       min-height: 100vh;
         animation: zoom 2s cubic-bezier(0.65, 0.05, 0.36, 1);
         background-attachment: fixed;
     }
