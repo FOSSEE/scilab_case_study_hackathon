@@ -127,18 +127,7 @@ function addActiveClass() {
       list-style: none;
       padding: 0px 8px;
     }
-  
-    @media only screen and (max-width: 600px) {
-      nav,
-    ul {
-      display:block;
-      /* background-color: #000000; */
-    }
-  
-    ul.menu li {
-      display:block;
-    }
-    }
+
     ul.menu li a{
     text-decoration: none;
     color:#6c5353;
@@ -158,6 +147,7 @@ function addActiveClass() {
     padding: 10px;
     border-radius: 10px;
   }
+  
   ul.menu li:last-child{  
     border-right: none;
   }
@@ -166,5 +156,21 @@ function addActiveClass() {
   ul.menu li .active{
     color:#f70000;
   }
+    
+  @media only screen and (max-width: 600px) {
+      nav,
+    ul {
+      display:block;
+      /* background-color: #000000; */
+    }
+  
+    ul.menu li {
+      display:block;
+    }
+    a.nav-link.active{
+      padding: 3px;
+      border-radius: 2px;
+    }
+    }
   </style>
  
