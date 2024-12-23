@@ -1,0 +1,11 @@
+[
+ 
+    { "label": "About", "href": "/#about" },
+    {"label": "Problem-Statement", "href": "/problem-statement"},
+    {"label": "Register", "href": "/#register"},
+    {"label": "Submission-guidelines", "href": "/submission-guidelines"},
+    { "label": "Resources", "href": "/resources" },
+    {"label": "Results", "href": "/results"},
+    { "label": "Contact", "href": "/#contact" }
+  
+  ]

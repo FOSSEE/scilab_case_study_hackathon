@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Nav from '../components/layout/Nav.astro';
+import HomeBody from '../components/HomeBody.astro';
+---
+
+<Layout title="Scilab Case Study Hackathon">
+<!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-0 bg-gray-200 "> -->
+    <div class="md:px-4 pb-5">
+      <div class="md:px-20 px-3">
+        <h1 class="text-left section-title pl-4" id="evaluation">Evaluation Criteria</h1>
+        <ul class="list-disc list-inside space-y-2 pt-4">
+    <li>Complexity of the problem, including its technical depth and challenges. &nbsp;</li>
+    <li>Quality of the journal, considering its credibility and impact factor. &nbsp;</li>
+    <li>Novelty of the topic, focusing on originality and innovation. &nbsp;&nbsp;</li>
+    <li>Accuracy of the reproduced results compared to the reference paper. &nbsp;</li>
+    <li>Effective and innovative use of Scilab features and toolboxes. &nbsp;</li>
+    <li>Readability, proper documentation, and adherence to best coding practices. &nbsp;</li>
+    </ul>
+      </div>
+    </div>
+  
+    <div class="md:px-4 pb-5">
+      <div class="md:px-20 px-3">
+        <h1 class="text-center section-title mx-4 px-4 mb-5" id="about">System Requirements</h1>
+    
+       
+    
+        <!-- Grid Container for Two Columns and Three Cards in Second Row -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          
+          <!-- Linux Section Card -->
+          <div class="bg-gray-100 p-5 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold mb-1"><strong>Linux:</strong></h4>
+            <ul class="space-y-1">
+              <li><h3>OS: Ubuntu 22.04+ </h3></li>
+              <li><h3>Scilab: <a target="_blank"  href="https://www.scilab.org/download" class="text-blue-500 hover:underline">Download latest version</a></h3></li>
+            </ul>
+          </div>
+    
+          <!-- Mac Section Card -->
+          <div class="bg-gray-100 p-5 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold mb-1"><strong>Mac:</strong></h4>
+            <ul class="space-y-1">
+              <li><h3>OS: macOS 10.13+</h3></li>
+              <li><h3>Scilab: <a target="_blank" href="https://www.scilab.org/download" class="text-blue-500 hover:underline">Download latest version</a></h3></li>
+            </ul>
+          </div>
+    
+          <!-- Windows Section Card -->
+          <div class="bg-gray-100 p-5 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold mb-1"><strong>Windows:</strong></h4>
+            <ul class="space-y-1">
+              <li><h3>OS: Windows 10 or 11</h3></li>
+            </ul>
+            <p>Scilab: <a target="_blank"  href="https://www.scilab.org/download" class="text-blue-500 hover:underline">Download latest version</a></p>
+          </div>
+    
+        </div>
+         <!-- General Section Card centered -->
+         <div class="bg-gray-100 p-5 rounded-lg shadow-md max-w-md mx-auto my-4">
+          <h4 class="text-xl font-semibold mb-1"><strong>General:</strong></h4>
+          <ul class="space-y-1">
+            <li><h3><strong>RAM:</strong> 4 GB (8 GB recommended)</h3></li>
+            <li><h3><strong>Processor:</strong> Dual-core or higher</h3></li>
+            <li><h3><strong>Storage:</strong> 2 GB free space</h3></li>
+            <li><h3><strong>Internet:</strong> Stable connection</h3></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+  <!-- </div> -->
+</Layout>

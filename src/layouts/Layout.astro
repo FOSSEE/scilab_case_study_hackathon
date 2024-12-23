@@ -1,0 +1,39 @@
+---
+interface Props {
+	title: string;
+}
+import Nav from '../components/layout/Nav.astro';
+import'../assets/css/custom.css';
+
+import Footer from '../components/layout/Footer.astro';
+const { title } = Astro.props;
+
+---
+
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+	
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+		<link rel="icon" type="image/svg+xml" class="bg-red-500" href="https://scilab.in/sites/default/files/favicon.png" />
+    <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+  
+</head>
+<body>
+    <Nav />
+    <div class="w-full block">
+      <slot />
+    </div>
+      <Footer />
+	</body>
+</html>
+
