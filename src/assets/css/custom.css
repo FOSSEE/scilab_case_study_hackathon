@@ -75,14 +75,15 @@
    color:#f50000;
    font-size: 1.5rem;
    font-weight: 500;
-   padding: 1.5rem 2rem;
+   padding-top: 4rem;
+   /* padding: 1.5rem 2rem; */
  /* padding-top: 4vw; */
    transition: 1.3s;
 }
 
  @media screen and (max-width: 983px) {
 .section-title{
-   font-size:2rem;
+   font-size:1.5rem;
    padding: 1rem 2rem;
    /* text-shadow: 2px 2px #0a4850; */
 }  
