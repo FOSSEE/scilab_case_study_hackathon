@@ -148,3 +148,12 @@
 }
 
 /*********end neon button********** */
+
+@media  (min-width:1368px) {
+   p, td, th, li{
+      font-size: 1.4rem;
+   }
+   .section-title{
+      font-size: 2rem;
+   }
+}
