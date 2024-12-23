@@ -1,11 +1,12 @@
 [
  
     { "label": "About", "href": "/#about" },
-    {"label": "Problem-Statement", "href": "/problem-statement"},
+    {"label": "Problem Statement", "href": "/problem-statement"},
     {"label": "Register", "href": "/#register"},
-    {"label": "Submission-guidelines", "href": "/submission-guidelines"},
+    {"label": "Evaluation criteria", "href": "/evaluation"},
+    {"label": "System Requirement", "href": "/evaluation/#system-reuirement"},
     { "label": "Resources", "href": "/resources" },
-    {"label": "Results", "href": "/results"},
+
     { "label": "Contact", "href": "/#contact" }
   
   ]
