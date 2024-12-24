@@ -53,6 +53,8 @@ import iitb from "../assets/img/IITB.png";
 import fossee from "../assets/img/FOSSEE.png";
 import st from "../assets/img/spoken.png";
 import process from "../assets/img/process.png";
+import Nmeict from "../assets/img/NMEICT -logo.png";
+import Moe from "../assets/img/MOE-logo.png";
 ---
 
 <!-- Introduction -->
@@ -271,10 +273,13 @@ import process from "../assets/img/process.png";
     
       
       <div class="max-w-6xl mx-auto px-4">
-      <div class="flex justify-center items-center space-x-3 mb-6 bg-white text-green-300 ">
-        <a class="hover:scale-105" href="https://www.iitb.ac.in/" target="_blank"><img  src={iitb.src} alt="IIT Bombay"  decoding="async"></a>
-        <a class="hover:scale-105" href="https://fossee.in/" target="_blank"> <img src={fossee.src} alt="FOSSEE"  decoding="async"></a>
-          <a class="hover:scale-105" href="https://spoken-tutorial.org/" target="_blank"> <img src={st.src} alt="Spoken Tutorial"  decoding="async"></a>
+      <div class="flex d-flex justify-center items-center space-x-3 mb-6 bg-white text-green-300 ">
+        <a class="hover:scale-105" href="https://www.iitb.ac.in/" target="_blank"><img  src={iitb.src} alt="IIT Bombay"  class="logos" decoding="async"></a>
+        <a class="hover:scale-105" href="https://fossee.in/" target="_blank"> <img src={fossee.src} alt="FOSSEE" class="logos"  decoding="async"></a>
+          <a class="hover:scale-105" href="https://spoken-tutorial.org/" target="_blank"> <img src={st.src} alt="Spoken Tutorial" class="logos" decoding="async"></a>
+          <a class="hover:scale-105" href="https://spoken-tutorial.org/" target="_blank"> <img src={Moe.src} alt="MOE" class="img logos" decoding="async"></a>
+          <a class="hover:scale-105" href="https://spoken-tutorial.org/" target="_blank"> <img src={Nmeict.src} alt="NMEICT" class="logos" decoding="async"></a>
+          
       </div>
 
 </div></footer>
@@ -379,6 +384,12 @@ import process from "../assets/img/process.png";
 <!-- CSS -->
 
   <style>
+     .logos {
+    width: 150px; /* Adjust to preferred size */
+    height: 100px; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensures the image fits within the container */
+    max-height: 130px; /* Optional for uniform height */
+  }
     .background-url{
         background: url(../assets/img/bg-01.png);
         background-attachment: fixed;
