@@ -3,8 +3,11 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), mdx()],
-  base : '/'
+  integrations: [tailwind(), mdx(), sitemap()],
+  base : '/',
+  site: 'https://scilab-hackathon.fossee.in',
 });
