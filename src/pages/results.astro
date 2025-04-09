@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import curtnLeft from '../assets/img/curtn-left.png';
+import curtnRight from '../assets/img/curtn-right.png';
+
 ---
 
 <Layout title="Scilab Case Study Hackathon" >
@@ -179,13 +182,13 @@ tr, th,td{
 
     .left-curtain {
       left: 0;
-      background-image: url('https://i.imgur.com/Bx6ka4T.png'); /* replace with your curtain img */
+      background-image: url({curtnLeft}); /* replace with your curtain img */
       transform: translateX(0%);
     }
 
     .right-curtain {
       right: 0;
-      background-image: url('https://i.imgur.com/Bx6ka4T.png'); /* same image for example */
+      background-image: url({curtnRight}); /* same image for example */
       transform: translateX(0%);
     }
 
