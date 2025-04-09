@@ -171,7 +171,7 @@ tr, th,td{
     tab.addEventListener('click', () => {
       const activeTab = document.querySelector('.tab.active');
       const activePanel = document.querySelector('.tab-panel.active');
-      
+
       if (activeTab) {
         activeTab.classList.remove('active');
       }
@@ -182,7 +182,11 @@ tr, th,td{
 
       tab.classList.add('active');
       const tabIndex = tab.getAttribute('data-tab');
-      document.getElementById(`tab-${tabIndex}`).classList.add('active');
+      const targetPanel = document.getElementById(`tab-${tabIndex}`);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
     });
   });
 </script>
+
