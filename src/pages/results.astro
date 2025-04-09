@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import curtnLeft from '../assets/img/curtn-left.png';
+import curtnRight from '../assets/img/curtn-right.png';
+
 ---
 
 <Layout title="Scilab Case Study Hackathon" >
@@ -165,8 +168,69 @@ tr, th,td{
   .tab-content > div.active {
     display: block;
   }
-</style>
-<script>
+
+ .curtain {
+      position: fixed;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 10;
+      transition: transform 3s 1s ease-in-out;
+    }
+
+    .left-curtain {
+      left: 0;
+      background-image: url(../assets/img/curtn-left.png); /* replace with your curtain img */
+      transform: translateX(0%);
+    }
+
+    .right-curtain {
+      right: 0;
+      background-image: url(../assets/img/curtn-left.png); /* same image for example */
+      transform: translateX(0%);
+    }
+
+    .open-left {
+      transform: translateX(-100%);
+    }
+
+    .open-right {
+      transform: translateX(100%);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      top: 40%;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="curtain left-curtain"></div>
+  <div class="curtain right-curtain"></div>
+
+  <div class="content">
+    <h1>Welcome to the Show!</h1>
+  </div>
+
+  <script>
+  window.addEventListener('load', () => {
+  const leftCurtain = document.querySelector('.left-curtain');
+  const rightCurtain = document.querySelector('.right-curtain');
+
+  if (leftCurtain && rightCurtain) {
+    leftCurtain.classList.add('open-left');
+    rightCurtain.classList.add('open-right');
+  }
+});
+
+  
   document.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('click', () => {
       const activeTab = document.querySelector('.tab.active');
