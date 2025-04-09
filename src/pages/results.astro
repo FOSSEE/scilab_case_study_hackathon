@@ -3,17 +3,190 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Scilab Case Study Hackathon" >
-  <h1>The Hackathon is still ongoing</h1>
-  <!-- <div class="md:px-4 pb-5 h-lvh">
-    <div class="md:px-20 px-3">
-      <h1 class="text-center section-title mx-4 px-4" id="resources">Results</h3>
-    <ul class="list-disc list-inside space-y-2">
-      <li class="">Cash rewards</li>
-      <li class="">Certificates for all participants.</li>
-      <li class="">
-        Exclusive recognition for outstanding projects on the Scilab webpage.
-      </li>
-    </ul>
+
+
+<!--<h1>The Hackathon is still ongoing</h1>-->
+<div class="tabs mt-10">
+  <div class="tab active" data-tab="0">Winners</div>
+  <div class="tab" data-tab="1">Consolation Prize Winners</div>
+
 </div>
-</div> -->
+<div class="tab-content mb-16">
+  <div class="tab-panel active" id="tab-0">
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Case Study Title</th>
+<th>Participant's Name</th>
+</tr>
+</thead>
+<tbody>
+ <tr>
+    <td>1st Prize</td>
+    <td>Mathematical modelling and simulation of diesel engine thermodynamics</td>
+    <td>Koustav Bhattacharjee</td>
+  </tr>
+  <tr>
+    <td rowspan="2">2nd Prize</td>
+    <td>Unmanned aerial vehicle (UAV) - based wireless communication system</td>
+    <td>Dr Deepan Nagarajan</td>
+  </tr>
+  <tr>
+    <td>SIMPLE</td>
+    <td>Pranjali Digambar Main</td>
+  </tr>
+  <tr>
+    <td rowspan="2">3rd Prize</td>
+    <td>Smart traffic light control system</td>
+    <td>Krishendu Roy</td>
+  </tr>
+  <tr>
+    <td>Optimisation in Scilab using the gradient descent algorithm</td>
+    <td>Naini Diwan</td>
+  </tr>
+</tbody>
+</table>
+</div>
+ <div class="tab-panel" id="tab-1">
+
+<table>
+<thead>
+<tr>
+<th>Case Study Title</th>
+<th>Participant's Name</th>
+</tr>
+  </thead>
+  <tbody>
+<tr>
+<td>Minimum length rocket nozzle design using method of characteristic</td>
+<td>Ishar Singh Saini</td>
+</tr>
+<tr>
+<td>Solving lid driven cavity flow using the lattice Boltzmann method in Scilab</td>
+<td>Dr Pravinraj T</td>
+</tr>
+<tr>
+<td>Automated product surface defect inspection using Scilab</td>
+<td>Ayush Warsh</td>
+</tr>
+<tr>
+<td>Dynamic gain-scheduled adaptive cruise control using Scilab</td>
+<td>Keerti Madhuvantika A</td>
+</tr>
+<tr>
+<td>Enhanced brain tumor detection in MRI using Scilab</td>
+<td>Pranay Kumar Pandey</td>
+</tr>
+<tr>
+<td>Measuring the quality of hand and surface grinding using Scilab image processing tools</td>
+<td>Mitalee Mishra</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+ 
+
 </Layout>
+
+<style>
+    table{
+        box-shadow: none;
+        background-color: white;
+        transition: 0.3s;
+    }
+
+    table:hover{
+        
+        box-shadow: 0px 5px 58px 0px rgba(36, 80, 80, 0.7);
+     
+        /* scale: 1.1; */
+    }
+a {
+  /* background:; */
+  color: rgb(255, 0, 149);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-bottom: 3px;
+  margin-bottom: 3px;
+}
+
+a:hover {
+  background-color: #ff5e00;
+  text-decoration:underline;
+  color: white;
+  
+}
+
+a:active {
+  background-color: rgb(255, 0, 0);
+  
+}
+
+/* a:visited {
+  background-color: #9dff6f;
+} */
+tr, th,td{
+    border: 2px solid rgb(255, 0, 85);
+    padding: 5px;
+}
+.tabs {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .tab {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background: #f1f1f1;
+  }
+  .tab:hover {
+    background: #f36262;
+  }
+
+  .tab.active {
+    background: #fc0000;
+    color:white;
+    font-weight: bold;
+  }
+
+  .tab-content {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background: #fff;
+  }
+
+  .tab-content > div {
+    display: none;
+  }
+
+  .tab-content > div.active {
+    display: block;
+  }
+</style>
+<script>
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const activeTab = document.querySelector('.tab.active');
+      const activePanel = document.querySelector('.tab-panel.active');
+
+      if (activeTab) {
+        activeTab.classList.remove('active');
+      }
+
+      if (activePanel) {
+        activePanel.classList.remove('active');
+      }
+
+      tab.classList.add('active');
+      const tabIndex = tab.getAttribute('data-tab');
+      const targetPanel = document.getElementById(`tab-${tabIndex}`);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    });
+  });
+</script>
+
