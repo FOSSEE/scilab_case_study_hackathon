@@ -4,6 +4,13 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Scilab Case Study Hackathon" >
   <h1>The Hackathon is still ongoing</h1>
+<div class="tabs">
+  <div class="tab active" data-tab="0">Winners</div>
+  <div class="tab" data-tab="1">Consolation</div>
+  <div class="tab" data-tab="2">Good Submissions</div>
+</div>
+<div class="tab-content">
+  <div class="tab-panel active" id="tab-0">
 <table>
 <thead>
 <tr>
@@ -38,7 +45,8 @@ import Layout from '../layouts/Layout.astro';
   </tr>
 </tbody>
 </table>
-
+</div>
+ <div class="tab-panel active" id="tab-0">
 
 <table>
 <thead>
@@ -74,6 +82,8 @@ import Layout from '../layouts/Layout.astro';
 </tr>
 </tbody>
 </table>
+</div>
+</div>
   <!-- <div class="md:px-4 pb-5 h-lvh">
     <div class="md:px-20 px-3">
       <h1 class="text-center section-title mx-4 px-4" id="resources">Results</h3>
@@ -86,4 +96,101 @@ import Layout from '../layouts/Layout.astro';
     </ul>
 </div>
 </div> -->
+
+<style>
+    table{
+        box-shadow: none;
+        background-color: white;
+        transition: 0.3s;
+    }
+
+    table:hover{
+        
+        box-shadow: 0px 5px 58px 0px rgba(36, 80, 80, 0.7);
+     
+        /* scale: 1.1; */
+    }
+a {
+  /* background:; */
+  color: rgb(255, 0, 149);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-bottom: 3px;
+  margin-bottom: 3px;
+}
+
+a:hover {
+  background-color: #ff5e00;
+  text-decoration:underline;
+  color: white;
+  
+}
+
+a:active {
+  background-color: rgb(255, 0, 0);
+  
+}
+
+/* a:visited {
+  background-color: #9dff6f;
+} */
+tr, th,td{
+    border: 2px solid rgb(255, 0, 85);
+    padding: 5px;
+}
+.tabs {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .tab {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background: #f1f1f1;
+  }
+  .tab:hover {
+    background: #f36262;
+  }
+
+  .tab.active {
+    background: #fc0000;
+    color:white;
+    font-weight: bold;
+  }
+
+  .tab-content {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background: #fff;
+  }
+
+  .tab-content > div {
+    display: none;
+  }
+
+  .tab-content > div.active {
+    display: block;
+  }
+</style>
+<script>
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const activeTab = document.querySelector('.tab.active');
+      const activePanel = document.querySelector('.tab-panel.active');
+      
+      if (activeTab) {
+        activeTab.classList.remove('active');
+      }
+
+      if (activePanel) {
+        activePanel.classList.remove('active');
+      }
+
+      tab.classList.add('active');
+      const tabIndex = tab.getAttribute('data-tab');
+      document.getElementById(`tab-${tabIndex}`).classList.add('active');
+    });
+  });
+</script>
 </Layout>
