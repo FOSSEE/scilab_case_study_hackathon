@@ -217,10 +217,16 @@ tr, th,td{
   </div>
 
   <script>
-    window.addEventListener('load', () => {
-      document.querySelector('.left-curtain').classList.add('open-left');
-      document.querySelector('.right-curtain').classList.add('open-right');
-    });
+  window.addEventListener('load', () => {
+  const leftCurtain = document.querySelector('.left-curtain');
+  const rightCurtain = document.querySelector('.right-curtain');
+
+  if (leftCurtain && rightCurtain) {
+    leftCurtain.classList.add('open-left');
+    rightCurtain.classList.add('open-right');
+  }
+});
+
   
   document.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('click', () => {
