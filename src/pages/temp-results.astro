@@ -44,14 +44,14 @@
     <script type="text/javascript">
       function startCountdown(button) {
         button.disabled = true;
-        let countdown = 5;
+        let countdown = 3;
 
         const interval = setInterval(() => {
           if (countdown > 0) {
-            button.textContent = `🎉 Redirecting in ${countdown--}s...`;
+            button.textContent = `📢 Result announcement in ${countdown--}s...`;
           } else {
             clearInterval(interval);
-            window.location.href = '/results'; // 🔁 Update as needed
+            window.location.href = '/results'; 
           }
         }, 1000);
       }
