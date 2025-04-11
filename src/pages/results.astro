@@ -4,14 +4,14 @@ import curtnLeft from '../assets/img/curtn-left.png';
 import curtnRight from '../assets/img/curtn-right.png';
 
 ---
-
-<Layout title="Scilab Case Study Hackathon" >
-
- <div class="curtain left-curtain"></div>
+<div class="curtain left-curtain"></div>
   <div class="curtain right-curtain"></div>
  
 
-  
+   <div class="page-content hidden" id="main-content">
+<Layout title="Scilab Case Study Hackathon" >
+
+ 
    
 <h1 class="text-center section-title pl-4" id="results">Results</h1>
 <!--<h1>The Hackathon is still ongoing</h1>-->
@@ -146,8 +146,11 @@ import curtnRight from '../assets/img/curtn-right.png';
  
 
 </Layout>
-
+</div>
 <style>
+.hidden {
+  display: none;
+}
     table{
         box-shadow: none;
         background-color: white;
@@ -266,16 +269,20 @@ tr, th,td{
 
 
   <script>
-  window.addEventListener('load', () => {
+ window.addEventListener('load', () => {
   const leftCurtain = document.querySelector('.left-curtain');
   const rightCurtain = document.querySelector('.right-curtain');
+  const content = document.getElementById('main-content');
 
-
-  if (leftCurtain && rightCurtain) {
+  if (leftCurtain && rightCurtain && content) {
     leftCurtain.classList.add('open-left');
     rightCurtain.classList.add('open-right');
-  }
 
+    // Show the content after the curtain animation (4.5s)
+    setTimeout(() => {
+      content.classList.remove('hidden');
+    }, 500);
+  }
 });
 
   
