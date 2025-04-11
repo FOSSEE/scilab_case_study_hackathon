@@ -1,10 +1,10 @@
 ---
-// No frontmatter needed unless you’re using props
+
 ---
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Countdown Redirect</title>
+    <title>Congratulations</title>
     <style>
       .center-container {
         height: 100vh;
@@ -51,7 +51,7 @@
             button.textContent = `🎉 Redirecting in ${countdown--}s...`;
           } else {
             clearInterval(interval);
-            window.location.href = '/congratulations-page'; // 🔁 Update as needed
+            window.location.href = '/results'; // 🔁 Update as needed
           }
         }, 1000);
       }
