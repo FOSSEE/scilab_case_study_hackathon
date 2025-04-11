@@ -1,0 +1,60 @@
+---
+
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Congratulations</title>
+    <style>
+      .center-container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f3f4f6;
+      }
+
+      .fancy-button {
+        padding: 14px 28px;
+        font-size: 18px;
+        font-weight: 600;
+        color: white;
+        background: linear-gradient(135deg, #6366f1, #4f46e5);
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(79, 70, 229, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .fancy-button:hover {
+        background: linear-gradient(135deg, #4338ca, #3730a3);
+        box-shadow: 0 10px 20px rgba(67, 56, 202, 0.4);
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center-container">
+      <button class="fancy-button" onclick="startCountdown(this)">
+        🎉 Congratulations
+      </button>
+    </div>
+
+    <script type="text/javascript">
+      function startCountdown(button) {
+        button.disabled = true;
+        let countdown = 3;
+
+        const interval = setInterval(() => {
+          if (countdown > 0) {
+            button.textContent = `📢 Result announcement in ${countdown--}s...`;
+          } else {
+            clearInterval(interval);
+            window.location.href = '/results'; 
+          }
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
