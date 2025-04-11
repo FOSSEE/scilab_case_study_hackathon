@@ -1,5 +1,5 @@
  <div class="center-container">
-      <button id="countdownBtn" class="fancy-button" onclick="startCountdown()">🎉 Congratulations</button>
+      <button class="fancy-button" onclick="startCountdown()">🎉 Congratulations</button>
     </div>
     <style>
       .center-container {
@@ -30,20 +30,19 @@
       }
     </style>
 <script>
-   let countdown = 5;
-      const targetUrl = '/results'; // 🔁 Change to your target page
+ <script>
+  function startCountdown(button: HTMLButtonElement) {
+    button.disabled = true;
+    let countdown = 5;
 
-      function startCountdown() {
-        const button = document.getElementById('countdownBtn');
-        button.disabled = true;
-
-        const interval = setInterval(() => {
-          if (countdown > 0) {
-            button.textContent = `🎉 Redirecting in ${countdown--}s...`;
-          } else {
-            clearInterval(interval);
-            window.location.href = targetUrl;
-          }
-        }, 1000);
+    const interval = setInterval(() => {
+      if (countdown > 0) {
+        button.textContent = `🎉 Redirecting in ${countdown--}s...`;
+      } else {
+        clearInterval(interval);
+        window.location.href = '/congratulations-page';
       }
+    }, 1000);
+  }
+</script>
 </script>
