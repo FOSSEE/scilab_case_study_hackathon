@@ -1,6 +1,8 @@
 [
  
     { "label": "About", "href": "/#about" },
+ 
+    { "label": "Results", "href": "/results" },
     {"label": "Problem Statement", "href": "/problem-statement"},
     {"label": "Register", "href": "/#register"},
     {"label": "Evaluation criteria", "href": "/evaluation"},
